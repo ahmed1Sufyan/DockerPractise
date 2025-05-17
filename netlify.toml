@@ -1,0 +1,6 @@
+[build]
+  functions = "functions"
+  publish = "dist" # or "build" if React/CRA
+
+[dev]
+  command = "npm run start"
