@@ -1,0 +1,19 @@
+
+services:
+    mongodb:
+        container_name: mongodb
+        image: mongo
+        environment: 
+            MONGO_INITDB_ROOT_USERNAME: "sufyan"
+            MONGO_INITDB_ROOT_PASSWORD: "smiu135"
+        ports: 
+            - "27017:27017"
+    node:
+        build:
+            context: .
+        container_name: nodeapp
+        image: newnodeapp
+        environment: 
+            MONGO_URI: "mongodb+srv://sufyan:smiu135@cluster0.nilua.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+        ports: 
+            - "5000:5000"
